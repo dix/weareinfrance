@@ -11,4 +11,4 @@ Obviously vibecoded.
 - Translations are available in `data/translations.csv`
 - New translations should be added from the top
 - Static files are generated with `src/generate.py`
-- For local development, run `uv run src/generate.py && uv run src/watch.py`
+- For local development, run `uv run src/generate.py && uv run src/watch.py`; content is generated in `www`
