@@ -1,0 +1,12 @@
+[project]
+name = "weareinfrance.fr"
+version = "0.1.0"
+description = "We speak French"
+requires-python = ">=3.11"
+dependencies = [
+    "jinja2>=3.1.4",
+    "watchdog>=4.0.0",
+]
+
+[dependency-groups]
+dev = []

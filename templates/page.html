@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>weareinfrance.fr</title>
+    <link rel="icon" href="assets/favicon.ico" sizes="any" />
+    <link rel="icon" href="assets/favicon-32x32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="assets/favicon-16x16.png" type="image/png" sizes="16x16" />
+    <link rel="icon" href="assets/android-chrome-192x192.png" type="image/png" sizes="192x192" />
+    <link rel="icon" href="assets/android-chrome-512x512.png" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180" />
+    <link rel="manifest" href="assets/site.webmanifest" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="hero hero--compact">
+      <div class="hero__content">
+        <h1 class="hero__title">We are in France...</h1>
+        <p class="hero__subtitle">Traductions approximatives d'anglicismes</p>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="panel">
+        {% if total_pages > 1 %}
+        <div class="panel__header">
+          <div class="pager pager--split" aria-label="Pagination">
+            {% if page_num > 1 %}
+              <a class="pager__link" href="{{ pages[page_num - 2].filename }}">Avant</a>
+            {% else %}
+              <span class="pager__spacer" aria-hidden="true">Avant</span>
+            {% endif %}
+            {% if page_num < total_pages %}
+              <a class="pager__link" href="{{ pages[page_num].filename }}">Prochain</a>
+            {% else %}
+              <span class="pager__spacer" aria-hidden="true">Prochain</span>
+            {% endif %}
+          </div>
+        </div>
+        {% endif %}
+
+        <div class="table">
+          <div class="table__row table__row--head">
+            <span class="table__head">🇬🇧 English 🌹</span>
+            <span class="table__arrow" aria-hidden="true">→</span>
+            <span class="table__head">🇫🇷 Français 🐓</span>
+          </div>
+          {% for row in entries %}
+          <div class="table__row">
+            <span>{{ row.en }}</span>
+            <span class="table__arrow" aria-hidden="true">→</span>
+            <span>{{ row.fr }}</span>
+          </div>
+          {% endfor %}
+        </div>
+
+      </section>
+    </main>
+
+    <footer class="shell footer">
+      <p class="footer__text">...we speak French!</p>
+      <p class="footer__text">Inspiré par <a class="footer__link" href="https://www.youtube.com/watch?v=pfUmW_Mf5qc">Sébastien Chabal</a> 🏉</p>
+      <p class="footer__text">Généré à {{ generated_at }}</p>
+    </footer>
+  </body>
+</html>
