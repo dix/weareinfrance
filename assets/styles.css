@@ -55,6 +55,15 @@ code {
   color: var(--accent);
 }
 
+.hero__title a,
+.hero__title a:link,
+.hero__title a:visited,
+.hero__title a:hover,
+.hero__title a:active {
+  color: var(--accent);
+  text-decoration: none;
+}
+
 .hero__subtitle {
   font-size: 1.1rem;
   color: #000000;
